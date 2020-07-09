@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Suca Keren</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pilihlah Aku!</h1>
+      <div class="suca">
+        <p>Aku Keren 1</p>
+        <img class="img1" src="/public/image/suca1.jpeg" />
+      </div>
+      <div class="suca">
+        <p>Aku Keren 2</p>
+        <img class="img2" src="/public/image/suca4.jpeg" />
+      </div>
+    </div>
+    <button
+      class="download-button btn btn-lg brn-light"
+      type="submit"
+      onClick="refreshPage()"
+    >
+      Mulai Lagi
+    </button>
+
+    <script>
+      var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+
+      var randomSucaImage = 'suca' + randomNumber1 + '.jpeg';
+
+      var randomImageSource = 'image/' + randomSucaImage;
+
+      var image1 = document.querySelectorAll('img')[0];
+
+      image1.setAttribute('src', randomImageSource);
+
+      var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+
+      var randomSucaImage2 = 'suca' + randomNumber2 + '.jpeg';
+
+      var randomImageSource2 = 'image/' + randomSucaImage2;
+
+      var image2 = document.querySelectorAll('img')[1];
+
+      image2.setAttribute('src', randomImageSource2);
+
+      if (randomNumber1 > randomNumber2) {
+        document.querySelector('h1').innerHTML = '🇮🇩 Foto 1 lebih keren!';
+      } else if (randomNumber2 > randomNumber1) {
+        document.querySelector('h1').innerHTML = 'Foto 2 lebih keren! 🇮🇩 ';
+      } else {
+        document.querySelector('h1').innerHTML = 'Draw!';
+      }
+
+      function refreshPage() {
+        window.location.reload();
+      }
+    </script>
+  </body>
+
+  <footer>
+    www ♥️ Cahya Samudera ♥️ com
+  </footer>
+</html>
